@@ -9,15 +9,15 @@ sed -i "s/listen \[::\]:80;/listen \[::\]:${PORT};/g" /etc/nginx/sites-available
 
 # Atur kepemilikan dan izin akses volume database agar bisa diakses oleh www-data
 echo "Mengatur izin akses direktori database..."
-chown -R www-data:www-data /var/www/html/database
-chmod -R 775 /var/www/html/database
+chown -R www-data:www-data /var/www/html/database_persistent
+chmod -R 775 /var/www/html/database_persistent
 
 # Inisialisasi database SQLite jika belum ada
-if [ ! -f /var/www/html/database/database.sqlite ]; then
+if [ ! -f /var/www/html/database_persistent/database.sqlite ]; then
     echo "Membuat database SQLite baru..."
-    touch /var/www/html/database/database.sqlite
-    chown www-data:www-data /var/www/html/database/database.sqlite
-    chmod 664 /var/www/html/database/database.sqlite
+    touch /var/www/html/database_persistent/database.sqlite
+    chown www-data:www-data /var/www/html/database_persistent/database.sqlite
+    chmod 664 /var/www/html/database_persistent/database.sqlite
 fi
 
 # Jalankan migrasi database
