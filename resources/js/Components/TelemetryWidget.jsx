@@ -68,12 +68,23 @@ export default function TelemetryWidget() {
     };
 
     return (
-        <div className="p-3 border border-terminal-primary/20 bg-terminal-muted/5 font-mono text-[10px] w-full text-gray-400 select-none">
-            <div className="grid grid-cols-2 gap-x-4 gap-y-1 w-full min-w-0">
-                <div className="truncate"><span className="text-terminal-primary">IP_UPLINK:</span> {ip}</div>
-                <div className="truncate"><span className="text-terminal-primary">NODE:</span> {node}</div>
-                <div className="col-span-2 truncate"><span className="text-terminal-primary">CORE_BATT:</span> {renderBatteryBar()}</div>
-                <div className="col-span-2 truncate"><span className="text-terminal-primary">SYS_LOAD:</span> {cpuLoad}</div>
+        <div className="flex flex-row flex-wrap items-center justify-between w-full font-mono text-[9px] text-gray-500 select-none pb-2">
+            <div className="flex flex-row flex-wrap items-center gap-x-3 gap-y-1">
+                <div><span className="text-terminal-primary">IP:</span> {ip}</div>
+                <div className="text-gray-700">|</div>
+                <div><span className="text-terminal-primary">NODE:</span> {node}</div>
+                <div className="text-gray-700">|</div>
+                <div><span className="text-terminal-primary">BATT:</span> {renderBatteryBar()}</div>
+                <div className="text-gray-700">|</div>
+                <div><span className="text-terminal-primary">LOAD:</span> {cpuLoad}</div>
+            </div>
+            <div className="flex flex-row flex-wrap items-center gap-x-3 gap-y-1">
+                <div className="flex items-center gap-1.5 uppercase text-terminal-primary">
+                    <span className="inline-block w-1.5 h-1.5 bg-terminal-primary rounded-full animate-pulse"></span>
+                    SESSION: ACTIVE
+                </div>
+                <div className="text-gray-700">|</div>
+                <div><span className="text-terminal-primary">VER:</span> v4.0.1</div>
             </div>
         </div>
     );
