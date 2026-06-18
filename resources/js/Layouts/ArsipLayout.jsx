@@ -117,7 +117,7 @@ export default function ArsipLayout({ children }) {
             
             <header className="max-w-7xl mx-auto border-b border-terminal pb-6 mb-8 flex flex-col md:flex-row justify-between items-center md:items-end gap-4 relative z-10">
                 <h1 className="sr-only">Arif Renggy - Portofolio Developer Laravel & React</h1>
-                <div className="flex flex-col gap-3 w-full md:w-auto">
+                <div className="flex flex-col items-center md:items-start gap-3 w-full md:w-auto">
                     <AsciiHeader />
                     <TelemetryWidget />
                 </div>
