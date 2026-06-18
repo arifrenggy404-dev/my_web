@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link, router } from '@inertiajs/react';
 import { Terminal, Cpu, Layers, Zap, MessageSquare } from 'lucide-react';
 import AsciiHeader from '../Components/AsciiHeader';
-import SystemLogs from '../Components/SystemLogs';
 import TerminalStatusBar from '../Components/TerminalStatusBar';
 import TerminalNotifications from '../Components/TerminalNotifications';
 
@@ -86,8 +85,6 @@ export default function ArsipLayout({ children }) {
                             </Link>
                         ))}
                     </nav>
-                    
-                    <SystemLogs />
                 </aside>
                 
                 <main className="md:col-span-3 border border-terminal p-6 relative bg-terminal-muted/10 backdrop-blur-sm min-h-[500px]">
