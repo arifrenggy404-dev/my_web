@@ -1,4 +1,5 @@
 import React from 'react';
+import { Head } from '@inertiajs/react';
 import ArsipLayout from '../Layouts/ArsipLayout';
 import { ExternalLink, ShieldAlert, Cpu } from 'lucide-react';
 
@@ -11,6 +12,11 @@ const IkonGithub = ({ size = 14, ...props }) => (
 export default function Misi({ proyek = [] }) {
     return (
         <ArsipLayout>
+            <Head>
+                <title>Laporan Misi</title>
+                <meta name="description" content="Arsip portofolio proyek dan misi digital yang berhasil dikerjakan oleh Arif Renggy menggunakan PHP/Laravel, React, dan database SQL." />
+                <meta name="keywords" content="Proyek Web, Showcase Laravel, Aplikasi React, Portofolio PHP, Arif Renggy" />
+            </Head>
             <div className="space-y-6">
                 <div className="flex justify-between items-center border-b border-gray-800 pb-2">
                     <h2 className="text-[#ff007f] font-mono text-lg uppercase tracking-widest underline decoration-wavy text-neon-pink">Laporan Misi</h2>

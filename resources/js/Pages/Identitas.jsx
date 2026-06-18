@@ -1,9 +1,15 @@
 import React from 'react';
+import { Head } from '@inertiajs/react';
 import ArsipLayout from '../Layouts/ArsipLayout';
 
 export default function Identitas() {
     return (
         <ArsipLayout>
+            <Head>
+                <title>Identitas Core</title>
+                <meta name="description" content="Arsip identitas inti dan profil profesional Arif Renggy sebagai Fullstack Laravel & React Developer." />
+                <meta name="keywords" content="Arif Renggy, Laravel, React, Fullstack Developer, Indonesia, Cyberpunk UI" />
+            </Head>
             <div className="space-y-6">
                 <h2 className="text-[#ff007f] font-mono text-lg uppercase tracking-widest underline decoration-wavy text-neon-pink">Arsip Identitas</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm font-mono">

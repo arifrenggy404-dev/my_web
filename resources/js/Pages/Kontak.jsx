@@ -1,4 +1,5 @@
 import React from 'react';
+import { Head } from '@inertiajs/react';
 import ArsipLayout from '../Layouts/ArsipLayout';
 import { MessageSquare, Globe, Mail, ChevronRight } from 'lucide-react';
 
@@ -27,6 +28,11 @@ export default function Kontak() {
 
     return (
         <ArsipLayout>
+            <Head>
+                <title>Saluran Komunikasi</title>
+                <meta name="description" content="Hubungi Arif Renggy melalui berbagai saluran komunikasi terenkripsi seperti Email, GitHub, WhatsApp, dan LinkedIn." />
+                <meta name="keywords" content="Kontak web developer, Email Arif Renggy, GitHub Arif Renggy, Hubungi developer" />
+            </Head>
             <div className="space-y-8">
                 <div className="flex justify-between items-center border-b border-gray-800 pb-2">
                     <h2 className="text-[#ff007f] font-mono text-lg uppercase tracking-widest underline decoration-wavy text-neon-pink">Saluran Terenkripsi</h2>
