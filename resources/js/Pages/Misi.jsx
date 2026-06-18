@@ -19,19 +19,19 @@ export default function Misi({ proyek = [] }) {
             </Head>
             <div className="space-y-6">
                 <div className="flex justify-between items-center border-b border-gray-800 pb-2">
-                    <h2 className="text-[#ff007f] font-mono text-lg uppercase tracking-widest underline decoration-wavy text-neon-pink">Laporan Misi</h2>
+                    <h2 className="text-terminal-accent font-mono text-lg uppercase tracking-widest underline decoration-wavy text-neon-pink">Laporan Misi</h2>
                     <span className="text-[10px] text-gray-600 font-mono">TOTAL_MISI: {proyek.length}</span>
                 </div>
                 
                 <div className="grid grid-cols-1 gap-6">
                     {proyek.map((p) => (
-                        <div key={p.id} className="border border-gray-800 p-5 relative group hover:border-[#00f0ff]/50 transition-all bg-[#1a1a1c]/20">
+                        <div key={p.id} className="border border-gray-800 p-5 relative group hover:border-terminal-primary/50 transition-all bg-[#1a1a1c]/20">
                             {/* Efek Sudut Cyberpunk */}
-                            <div className="absolute top-0 right-0 w-3 h-3 bg-gray-800 group-hover:bg-[#00f0ff] clip-path-polygon transition-colors"></div>
+                            <div className="absolute top-0 right-0 w-3 h-3 bg-gray-800 group-hover:bg-terminal-primary clip-path-polygon transition-colors"></div>
                             
                             <div className="flex flex-col md:flex-row gap-6">
                                 {/* Thumbnail Proyek */}
-                                <div className="w-full md:w-32 h-32 flex-shrink-0 border border-gray-800 bg-black overflow-hidden relative group-hover:border-[#00f0ff]/30 transition-colors">
+                                <div className="w-full md:w-32 h-32 flex-shrink-0 border border-gray-800 bg-black overflow-hidden relative group-hover:border-terminal-primary/30 transition-colors">
                                     {p.jalur_gambar ? (
                                         <img 
                                             src={`/storage/${p.jalur_gambar}`} 
@@ -45,14 +45,14 @@ export default function Misi({ proyek = [] }) {
                                         </div>
                                     )}
                                 </div>
-
+ 
                                 <div className="flex-1 space-y-3">
                                     <div className="flex justify-between items-start">
                                         <div>
-                                            <h3 className="font-bold text-[#00f0ff] uppercase tracking-tight text-neon-cyan">{p.nama_proyek}</h3>
+                                            <h3 className="font-bold text-terminal-primary uppercase tracking-tight text-neon-cyan">{p.nama_proyek}</h3>
                                             <div className="text-[10px] text-gray-500 font-mono">ID: MISI_{p.id.toString().padStart(3, '0')}</div>
                                         </div>
-                                        <span className="text-[9px] font-mono px-2 py-0.5 border border-[#fee715] text-[#fee715] animate-pulse">
+                                        <span className="text-[9px] font-mono px-2 py-0.5 border border-terminal-warning text-terminal-warning animate-pulse">
                                             TERSELESAIKAN
                                         </span>
                                     </div>
@@ -61,7 +61,7 @@ export default function Misi({ proyek = [] }) {
                                     
                                     <div className="flex flex-wrap gap-1.5">
                                         {(p.teknologi_utama || []).map(t => (
-                                            <span key={t} className="text-[9px] bg-black px-2 py-0.5 text-[#fee715] border border-[#fee715]/20 font-mono uppercase italic">
+                                            <span key={t} className="text-[9px] bg-black px-2 py-0.5 text-terminal-warning border border-terminal-warning/20 font-mono uppercase italic">
                                                 {t}
                                             </span>
                                         ))}
@@ -87,7 +87,7 @@ export default function Misi({ proyek = [] }) {
                                                 href={p.tautan_langsung} 
                                                 target="_blank" 
                                                 rel="noopener noreferrer"
-                                                className="text-[10px] font-mono text-[#00f0ff] hover:text-white uppercase flex items-center gap-1.5 transition-colors"
+                                                className="text-[10px] font-mono text-terminal-primary hover:text-white uppercase flex items-center gap-1.5 transition-colors"
                                             >
                                                 /AKSES_DEMO <ExternalLink size={10} />
                                             </a>

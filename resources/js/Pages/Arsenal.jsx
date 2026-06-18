@@ -4,12 +4,12 @@ import ArsipLayout from '../Layouts/ArsipLayout';
 
 export default function Arsenal() {
     const skills = [
-        { name: 'Laravel', level: 95, color: '#ff007f', isCore: true, desc: 'Mesin utama untuk backend berkinerja tinggi.' },
-        { name: 'React', level: 85, color: '#00f0ff', desc: 'Antarmuka reaktif dan dinamis.' },
-        { name: 'Tailwind CSS', level: 90, color: '#00f0ff', desc: 'Sistem desain utilitas atomik.' },
-        { name: 'Docker', level: 75, color: '#fee715', desc: 'Kontainerisasi infrastruktur.' },
-        { name: 'SQLite', level: 80, color: '#fee715', desc: 'Penyimpanan data lokal yang persisten.' },
-        { name: 'Inertia.js', level: 88, color: '#00f0ff', desc: 'Penghubung mulus antara Laravel dan React.' }
+        { name: 'Laravel', level: 95, color: 'var(--color-terminal-accent)', isCore: true, desc: 'Mesin utama untuk backend berkinerja tinggi.' },
+        { name: 'React', level: 85, color: 'var(--color-terminal-primary)', desc: 'Antarmuka reaktif dan dinamis.' },
+        { name: 'Tailwind CSS', level: 90, color: 'var(--color-terminal-primary)', desc: 'Sistem desain utilitas atomik.' },
+        { name: 'Docker', level: 75, color: 'var(--color-terminal-warning)', desc: 'Kontainerisasi infrastruktur.' },
+        { name: 'SQLite', level: 80, color: 'var(--color-terminal-warning)', desc: 'Penyimpanan data lokal yang persisten.' },
+        { name: 'Inertia.js', level: 88, color: 'var(--color-terminal-primary)', desc: 'Penghubung mulus antara Laravel dan React.' }
     ];
 
     return (
@@ -21,21 +21,21 @@ export default function Arsenal() {
             </Head>
             <div className="space-y-8">
                 <div className="flex justify-between items-center border-b border-gray-800 pb-2">
-                    <h2 className="text-[#ff007f] font-mono text-lg uppercase tracking-widest underline decoration-wavy text-neon-pink">Pusat Teknologi</h2>
+                    <h2 className="text-terminal-accent font-mono text-lg uppercase tracking-widest underline decoration-wavy text-neon-pink">Pusat Teknologi</h2>
                     <span className="text-[10px] text-gray-600 font-mono">STATUS_ALUTSISTA: OPTIMAL</span>
                 </div>
                 
                 <div className="grid grid-cols-1 gap-6">
                     {skills.map(s => (
-                        <div key={s.name} className={`p-5 border transition-all ${s.isCore ? "border-[#ff007f]/40 bg-[#ff007f]/5 shadow-[0_0_15px_rgba(255,0,127,0.1)]" : "border-gray-800 bg-[#1a1a1c]/20 hover:border-gray-700"}`}>
+                        <div key={s.name} className={`p-5 border transition-all ${s.isCore ? "border-terminal-accent/40 bg-terminal-accent/5 shadow-[0_0_15px_var(--color-terminal-muted)]" : "border-gray-800 bg-[#1a1a1c]/20 hover:border-gray-700"}`}>
                             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
                                 <div className="space-y-1">
                                     <div className="flex items-center gap-2">
-                                        <span className={`font-mono uppercase tracking-tighter ${s.isCore ? 'text-[#ff007f] font-black text-xl text-neon-pink' : 'text-gray-200 font-bold'}`}>
+                                        <span className={`font-mono uppercase tracking-tighter ${s.isCore ? 'text-terminal-accent font-black text-xl text-neon-pink' : 'text-gray-200 font-bold'}`}>
                                             {s.name}
                                         </span>
                                         {s.isCore && (
-                                            <span className="text-[8px] bg-[#ff007f] text-black px-1.5 py-0.5 font-black uppercase leading-none">CORE_ENGINE</span>
+                                            <span className="text-[8px] bg-terminal-accent text-black px-1.5 py-0.5 font-black uppercase leading-none">CORE_ENGINE</span>
                                         )}
                                     </div>
                                     <div className="text-[10px] text-gray-500 font-mono italic">{s.desc}</div>
