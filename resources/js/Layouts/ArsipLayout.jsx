@@ -6,6 +6,7 @@ import TerminalStatusBar from '../Components/TerminalStatusBar';
 import TerminalNotifications from '../Components/TerminalNotifications';
 import InteractiveBackground from '../Components/InteractiveBackground';
 import InteractiveCli from '../Components/InteractiveCli';
+import TelemetryWidget from '../Components/TelemetryWidget';
 
 export default function ArsipLayout({ children }) {
     const [logs, setLogs] = useState([]);
@@ -116,7 +117,10 @@ export default function ArsipLayout({ children }) {
             
             <header className="max-w-7xl mx-auto border-b border-terminal pb-6 mb-8 flex flex-col md:flex-row justify-between items-center md:items-end gap-4 relative z-10">
                 <h1 className="sr-only">Arif Renggy - Portofolio Developer Laravel & React</h1>
-                <AsciiHeader />
+                <div className="flex flex-col gap-3 w-full md:w-auto">
+                    <AsciiHeader />
+                    <TelemetryWidget />
+                </div>
                 <div className="text-center md:text-right w-full md:w-auto">
                     <div className="flex items-center justify-center md:justify-end gap-2 text-terminal-primary font-mono text-[10px] uppercase mb-1">
                         <span className="inline-block w-2 h-2 bg-terminal-primary rounded-full animate-pulse"></span>
