@@ -131,16 +131,20 @@ export default function ArsipLayout({ children }) {
                 <aside className="space-y-6">
                     <nav className="space-y-1">
                         <div className="text-terminal-primary text-[10px] font-mono mb-2 uppercase tracking-widest opacity-50">Directory</div>
-                        {navItems.map((item) => (
-                            <Link 
-                                key={item.href}
-                                href={item.href} 
-                                className={`flex items-center gap-3 p-2 border border-transparent hover:border-terminal hover:bg-terminal-primary/5 transition-all group ${window.location.pathname === item.href ? 'text-terminal-primary border-terminal bg-terminal-primary/10' : 'text-gray-400'}`}
-                            >
-                                <span className="text-terminal-primary opacity-50 group-hover:opacity-100">{'>'}</span>
-                                <span className="font-mono text-xs tracking-wider">/home/{item.label}</span>
-                            </Link>
-                        ))}
+                        <ul className="space-y-1">
+                            {navItems.map((item) => (
+                                <li key={item.href}>
+                                    <Link 
+                                        id={`sidebar-link-${item.label}`}
+                                        href={item.href} 
+                                        className={`flex items-center gap-3 p-2 border border-transparent hover:border-terminal hover:bg-terminal-primary/5 transition-all group ${window.location.pathname === item.href ? 'text-terminal-primary border-terminal bg-terminal-primary/10' : 'text-gray-400'}`}
+                                    >
+                                        <span className="text-terminal-primary opacity-50 group-hover:opacity-100">{'>'}</span>
+                                        <span className="font-mono text-xs tracking-wider">/home/{item.label}</span>
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
                     </nav>
                 </aside>
                 
@@ -156,11 +160,13 @@ export default function ArsipLayout({ children }) {
             </div>
 
             <button
+                id="cli-trigger-btn"
                 onClick={() => setIsCliOpen(true)}
                 className="fixed bottom-6 right-6 w-12 h-12 bg-black border border-terminal-primary rounded-full flex items-center justify-center text-terminal-primary hover:bg-terminal-primary hover:text-black transition-all cursor-pointer z-[60] shadow-[0_0_15px_var(--color-terminal-primary)] hover:shadow-[0_0_25px_var(--color-terminal-primary)] transition-shadow duration-300 animate-pulse"
                 title="Switch to CLI Mode"
+                aria-label="Switch to CLI Mode"
             >
-                <Terminal size={22} />
+                <Terminal size={22} aria-hidden="true" />
             </button>
             <InteractiveCli isOpen={isCliOpen} onClose={() => setIsCliOpen(false)} />
         </div>
