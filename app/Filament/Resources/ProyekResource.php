@@ -56,6 +56,7 @@ class ProyekResource extends Resource
 
                         Forms\Components\FileUpload::make('jalur_gambar')
                             ->label('Gambar Sampul Proyek')
+                            ->disk('public')
                             ->directory('gambar-proyek')
                             ->image()
                             ->nullable(),
@@ -78,7 +79,8 @@ class ProyekResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\ImageColumn::make('jalur_gambar')
-                    ->label('Sampul'),
+                    ->label('Sampul')
+                    ->disk('public'),
                 Tables\Columns\TextColumn::make('nama_proyek')
                     ->label('Nama Proyek')
                     ->searchable()
