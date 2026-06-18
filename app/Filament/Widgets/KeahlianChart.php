@@ -7,7 +7,7 @@ use Filament\Widgets\ChartWidget;
 
 class KeahlianChart extends ChartWidget
 {
-    protected static ?string $heading = 'Tingkat Energi Keahlian (%)';
+    protected ?string $heading = 'Tingkat Energi Keahlian (%)';
 
     protected static ?int $sort = 2;
 

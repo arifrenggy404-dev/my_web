@@ -6,7 +6,7 @@ use Filament\Widgets\Widget;
 
 class SystemStatus extends Widget
 {
-    protected static string $view = 'filament.widgets.system-status';
+    protected string $view = 'filament.widgets.system-status';
 
     protected static ?int $sort = 3;
 
