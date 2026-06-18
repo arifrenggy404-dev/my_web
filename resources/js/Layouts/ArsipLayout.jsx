@@ -57,11 +57,11 @@ export default function ArsipLayout({ children }) {
             
             <div className="absolute inset-0 scanline pointer-events-none opacity-5 z-50"></div>
             
-            <header className="max-w-7xl mx-auto border-b border-terminal pb-6 mb-8 flex flex-col md:flex-row justify-between items-end gap-4 relative z-10">
+            <header className="max-w-7xl mx-auto border-b border-terminal pb-6 mb-8 flex flex-col md:flex-row justify-between items-center md:items-end gap-4 relative z-10">
                 <h1 className="sr-only">Arif Renggy - Portofolio Developer Laravel & React</h1>
                 <AsciiHeader />
-                <div className="text-right">
-                    <div className="flex items-center justify-end gap-2 text-terminal-primary font-mono text-[10px] uppercase mb-1">
+                <div className="text-center md:text-right w-full md:w-auto">
+                    <div className="flex items-center justify-center md:justify-end gap-2 text-terminal-primary font-mono text-[10px] uppercase mb-1">
                         <span className="inline-block w-2 h-2 bg-terminal-primary rounded-full animate-pulse"></span>
                         Terminal Session: Active
                     </div>
