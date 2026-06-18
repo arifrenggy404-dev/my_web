@@ -3,22 +3,36 @@
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 
+:root {
+  --color-terminal-primary: #00f0ff;
+  --color-terminal-accent: #ff007f;
+  --color-terminal-warning: #fee715;
+  --color-terminal-bg: #0a0a0c;
+  --color-terminal-muted: rgba(0, 240, 255, 0.1);
+}
+
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+      'Segoe UI Symbol', 'Noto Color Emoji';
+
+  --color-terminal-primary: var(--color-terminal-primary);
+  --color-terminal-accent: var(--color-terminal-accent);
+  --color-terminal-warning: var(--color-terminal-warning);
+  --color-terminal-bg: var(--color-terminal-bg);
+  --color-terminal-muted: var(--color-terminal-muted);
 }
 
 @layer base {
   body {
-    @apply bg-[#0a0a0c] text-gray-100 font-mono;
-    background-image: radial-gradient(circle at 50% 50%, #1a1a1c 0%, #0a0a0c 100%);
+    @apply bg-terminal-bg text-gray-100 font-mono;
+    background-image: radial-gradient(circle at 50% 50%, #1a1a1c 0%, var(--color-terminal-bg) 100%);
   }
 }
 
 @layer utilities {
-  .text-neon-cyan { text-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff; }
-  .text-neon-pink { text-shadow: 0 0 5px #ff007f, 0 0 10px #ff007f; }
-  .border-neon-cyan { box-shadow: 0 0 5px #00f0ff; border-color: #00f0ff; }
+  .text-neon-cyan { text-shadow: 0 0 5px var(--color-terminal-primary), 0 0 10px var(--color-terminal-primary); }
+  .text-neon-pink { text-shadow: 0 0 5px var(--color-terminal-accent), 0 0 10px var(--color-terminal-accent); }
+  .border-neon-cyan { box-shadow: 0 0 5px var(--color-terminal-primary); border-color: var(--color-terminal-primary); }
   .neon-glow-cyan {
     box-shadow: 0 0 10px rgba(0, 240, 255, 0.5), 0 0 20px rgba(0, 240, 255, 0.2);
   }
