@@ -11,3 +11,10 @@ Route::get('/ping', function () {
 });
 
 Route::get('/proyek', [KontrolerProyek::class, 'ambilSemua']);
+
+Route::get('/ip', function (\Illuminate\Http\Request $request) {
+    return response()->json([
+        'ip' => $request->ip(),
+    ]);
+});
+
