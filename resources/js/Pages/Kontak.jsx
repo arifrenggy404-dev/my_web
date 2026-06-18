@@ -29,9 +29,22 @@ export default function Kontak() {
     return (
         <ArsipLayout>
             <Head>
-                <title>Saluran Komunikasi</title>
+                <title>Saluran Komunikasi Kontak | Arif Renggy - Fullstack Developer</title>
                 <meta name="description" content="Hubungi Arif Renggy melalui berbagai saluran komunikasi terenkripsi seperti Email, GitHub, WhatsApp, dan LinkedIn." />
                 <meta name="keywords" content="Kontak web developer, Email Arif Renggy, GitHub Arif Renggy, Hubungi developer" />
+                
+                {/* Open Graph / Facebook */}
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://arifrenggy.site/jalur-komunikasi" />
+                <meta property="og:title" content="Saluran Komunikasi Kontak | Arif Renggy - Fullstack Developer" />
+                <meta property="og:description" content="Hubungi Arif Renggy melalui berbagai saluran komunikasi terenkripsi seperti Email, GitHub, WhatsApp, dan LinkedIn." />
+                <meta property="og:site_name" content="Arif Renggy Portfolio" />
+                
+                {/* Twitter */}
+                <meta name="twitter:card" content="summary" />
+                <meta name="twitter:url" content="https://arifrenggy.site/jalur-komunikasi" />
+                <meta name="twitter:title" content="Saluran Komunikasi Kontak | Arif Renggy - Fullstack Developer" />
+                <meta name="twitter:description" content="Hubungi Arif Renggy melalui berbagai saluran komunikasi terenkripsi seperti Email, GitHub, WhatsApp, dan LinkedIn." />
             </Head>
             <div className="space-y-8">
                 <div className="flex justify-between items-center border-b border-gray-800 pb-2">
@@ -39,35 +52,38 @@ export default function Kontak() {
                     <span className="text-[10px] text-gray-600 font-mono">SINYAL: KUAT</span>
                 </div>
 
-                <div className="grid grid-cols-1 gap-4">
+                <ul className="grid grid-cols-1 gap-4">
                     {contacts.map(link => (
-                        <a 
-                            key={link.name}
-                            href={link.url} 
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-between p-5 border border-gray-800 bg-[#1a1a1c]/20 hover:border-terminal-primary hover:bg-terminal-primary/5 group transition-all relative overflow-hidden"
-                        >
-                            {/* Efek Hover Background */}
-                            <div className="absolute top-0 left-0 w-1 h-full bg-terminal-primary scale-y-0 group-hover:scale-y-100 transition-transform origin-top"></div>
-                            
-                            <div className="flex items-center gap-5 relative z-10">
-                                <div className={`p-2 border border-gray-800 bg-black group-hover:border-terminal-primary/50 transition-colors ${link.color}`}>
-                                    <link.icon size={20} />
+                        <li key={link.name}>
+                            <a 
+                                id={`contact-link-${link.name.toLowerCase()}`}
+                                href={link.url} 
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center justify-between p-5 border border-gray-800 bg-[#1a1a1c]/20 hover:border-terminal-primary hover:bg-terminal-primary/5 group transition-all relative overflow-hidden"
+                                aria-label={`Hubungkan melalui ${link.name} (terbuka di tab baru)`}
+                            >
+                                {/* Efek Hover Background */}
+                                <div className="absolute top-0 left-0 w-1 h-full bg-terminal-primary scale-y-0 group-hover:scale-y-100 transition-transform origin-top"></div>
+                                
+                                <div className="flex items-center gap-5 relative z-10">
+                                    <div className={`p-2 border border-gray-800 bg-black group-hover:border-terminal-primary/50 transition-colors ${link.color}`}>
+                                        <link.icon size={20} aria-hidden="true" />
+                                    </div>
+                                    <div className="space-y-0.5">
+                                        <span className="font-mono text-xs text-gray-500 uppercase tracking-tighter group-hover:text-gray-300">HUBUNGKAN_MELALUI</span>
+                                        <div className="font-mono text-sm font-black uppercase tracking-tight group-hover:text-terminal-primary">{link.name}</div>
+                                    </div>
                                 </div>
-                                <div className="space-y-0.5">
-                                    <span className="font-mono text-xs text-gray-500 uppercase tracking-tighter group-hover:text-gray-300">HUBUNGKAN_MELALUI</span>
-                                    <div className="font-mono text-sm font-black uppercase tracking-tight group-hover:text-terminal-primary">{link.name}</div>
+                                
+                                <div className="flex items-center gap-3 relative z-10">
+                                    <span className="text-xs text-gray-600 font-mono tracking-tighter group-hover:text-terminal-warning">{link.label}</span>
+                                    <ChevronRight size={14} className="text-gray-800 group-hover:text-terminal-primary transition-colors" aria-hidden="true" />
                                 </div>
-                            </div>
-                            
-                            <div className="flex items-center gap-3 relative z-10">
-                                <span className="text-xs text-gray-600 font-mono tracking-tighter group-hover:text-terminal-warning">{link.label}</span>
-                                <ChevronRight size={14} className="text-gray-800 group-hover:text-terminal-primary transition-colors" />
-                            </div>
-                        </a>
+                            </a>
+                        </li>
                     ))}
-                </div>
+                </ul>
                 
                 <div className="mt-12 p-6 border border-gray-800 bg-black/40 font-mono relative">
                     <div className="text-[10px] text-terminal-accent mb-4 uppercase tracking-widest text-neon-pink">// CATATAN_PENGEMBANG:</div>
