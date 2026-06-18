@@ -2,7 +2,15 @@ import React from 'react';
 import { Head } from '@inertiajs/react';
 import ArsipLayout from '../Layouts/ArsipLayout';
 
-export default function Identitas() {
+export default function Identitas({ profil }) {
+    const activeProfil = profil || {
+        nama_lengkap: 'Arif Renggy',
+        peran: 'Fullstack Developer',
+        spesialisasi: 'Laravel Expert',
+        wilayah: 'Indonesia',
+        kutipan: 'Arsitek Sistem yang berspesialisasi dalam membangun infrastruktur digital yang kokoh dan efisien menggunakan Laravel.'
+    };
+
     return (
         <ArsipLayout>
             <Head>
@@ -28,26 +36,26 @@ export default function Identitas() {
                 <ul className="grid grid-cols-2 gap-4 text-sm font-mono">
                     <li className="p-4 border border-gray-800 bg-black/40 hover:border-terminal-primary/30 transition-colors">
                         <div className="text-gray-500 mb-1 text-[10px]">IDENTITAS_INTI</div>
-                        <div className="text-white">Arif Renggy</div>
+                        <div className="text-white">{activeProfil.nama_lengkap}</div>
                     </li>
                     <li className="p-4 border border-gray-800 bg-black/40 hover:border-terminal-primary/30 transition-colors">
                         <div className="text-gray-500 mb-1 text-[10px]">PERAN</div>
-                        <div className="text-white">Fullstack Developer</div>
+                        <div className="text-white">{activeProfil.peran}</div>
                     </li>
                     <li className="p-4 border border-gray-800 bg-black/40 hover:border-terminal-primary/30 transition-colors border-l-2 border-l-terminal-primary">
                         <div className="text-gray-500 mb-1 text-[10px]">SPESIALISASI</div>
-                        <div className="text-terminal-primary font-bold">Laravel Expert</div>
+                        <div className="text-terminal-primary font-bold">{activeProfil.spesialisasi}</div>
                     </li>
                     <li className="p-4 border border-gray-800 bg-black/40 hover:border-terminal-primary/30 transition-colors">
                         <div className="text-gray-500 mb-1 text-[10px]">WILAYAH</div>
-                        <div className="text-white">Indonesia</div>
+                        <div className="text-white">{activeProfil.wilayah}</div>
                     </li>
                 </ul>
                 <div className="relative p-6 border border-gray-800 bg-[#1a1a1c]/30">
                      <div className="absolute top-0 left-0 w-1 h-full bg-terminal-warning"></div>
                      <p className="text-gray-400 text-sm leading-relaxed italic">
-                        "Arsitek Sistem yang berspesialisasi dalam membangun infrastruktur digital yang kokoh dan efisien menggunakan Laravel."
-                    </p>
+                        "{activeProfil.kutipan}"
+                     </p>
                 </div>
             </div>
         </ArsipLayout>
